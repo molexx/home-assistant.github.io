@@ -125,6 +125,20 @@ switch:
       slot_3: 'Fan slot'
       slot_4: 'Speaker slot'
 ```
+  
+  
+If you see an error like this on startup:
+
+```
+ERROR (MainThread) [homeassistant.components.switch] Error while setting up platform broadlink
+  ...
+  File "/usr/lib/python3.5/base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+```
+
+add `===` (three equals signs) to the end of the packet string to pad it to the correct base64 length. 
+
 
 ### {% linkable_title Service `send_packet` %}
 
